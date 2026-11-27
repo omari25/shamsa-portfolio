@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shamsa Mahat Abdullahi – IT Student & Web Developer</title>
+<meta name="description" content="Portfolio of Shamsa Mahat Abdullahi, an Information Technology student, web developer and Microsoft Azure Fundamentals certified, based in Garissa, Kenya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f1f6f4; --surface:#ffffff; --ink:#0e2a3a; --muted:#51686f; --line:#d3e0dc;
+  --accent:#0b6bb8; --accent-ink:#ffffff; --sun:#e9a23b; --code-bg:#0e2a3a; --code-ink:#d8ece6;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a1a24; --surface:#102431; --ink:#e6f1ee; --muted:#9bb2b6; --line:#1f3a48;
+    --accent:#5bb4ff; --accent-ink:#06202f; --sun:#f0b255; --code-bg:#06131b; --code-ink:#d8ece6; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0a1a24; --surface:#102431; --ink:#e6f1ee; --muted:#9bb2b6; --line:#1f3a48;
+  --accent:#5bb4ff; --accent-ink:#06202f; --sun:#f0b255; --code-bg:#06131b; --code-ink:#d8ece6; color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0;letter-spacing:-.02em}
+p{margin:0}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:4px}
+
+/* header */
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+.logo{font:800 1.25rem var(--head);text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.6rem}
+.logo i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:800 .9rem var(--head);font-style:normal}
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0}
+nav a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.97rem;padding:.3rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a.on{color:var(--ink);border-color:var(--sun)}
+.tools{display:flex;gap:.5rem}
+.btn-i{background:none;border:1px solid var(--line);color:var(--ink);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.05rem}
+.btn-i:hover{border-color:var(--accent)}
+#menu{display:none}
+
+/* hero */
+.hero{padding:clamp(3rem,8vw,6rem) 0 clamp(3rem,7vw,5rem)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+.hello{color:var(--muted);font-weight:500;margin-bottom:1rem}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800}
+.hero h1 span{display:block;color:var(--accent)}
+.lead{margin:1.4rem 0 2rem;max-width:34rem;color:var(--muted);font-size:1.15rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--accent);transition:transform .15s}
+.btn.p{background:var(--accent);color:var(--accent-ink)}
+.btn.s{color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.code{background:var(--code-bg);color:var(--code-ink);border-radius:14px;padding:1.2rem 1.4rem 1.4rem;font:500 .92rem/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;box-shadow:8px 8px 0 var(--sun);overflow-x:auto}
+.dots{display:flex;gap:6px;margin-bottom:.9rem}
+.dots b{width:11px;height:11px;border-radius:50%;background:#3c5666}
+.code pre{margin:0;font:inherit;white-space:pre}
+.code .l{display:block;opacity:0;animation:in .4s forwards}
+.code .k{color:#7cc4ff}.code .s{color:#f3c27a}.code .c{color:#7fa597}
+@keyframes in{to{opacity:1}}
+.code .l:nth-child(1){animation-delay:.2s}.code .l:nth-child(2){animation-delay:.6s}.code .l:nth-child(3){animation-delay:1s}
+.code .l:nth-child(4){animation-delay:1.4s}.code .l:nth-child(5){animation-delay:1.8s}.code .l:nth-child(6){animation-delay:2.2s}.code .l:nth-child(7){animation-delay:2.6s}
+
+/* sections */
+section{padding:clamp(3rem,7vw,5rem) 0;border-top:1px solid var(--line)}
+.sec{display:grid;grid-template-columns:220px 1fr;gap:2rem}
+.sec>h2{font-size:1.9rem;position:sticky;top:90px;align-self:start}
+.about p+p{margin-top:1rem}
+.about p{max-width:42rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:2rem}
+.fact{border-left:3px solid var(--sun);padding-left:1rem}
+.fact b{display:block;font:700 1.05rem var(--head)}
+.fact span{color:var(--muted);font-size:.95rem}
+
+.tl{list-style:none;margin:0;padding:0 0 0 1.6rem;border-left:2px solid var(--line)}
+.tl>li{position:relative;padding-bottom:2.4rem}
+.tl>li:last-child{padding-bottom:0}
+.tl>li::before{content:"";position:absolute;left:calc(-1.6rem - 7px);top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl>li.now::before{background:var(--sun);border-color:var(--sun)}
+.when{color:var(--accent);font-weight:600;font-size:.95rem}
+.tl h3{font-size:1.3rem;margin:.2rem 0 .1rem}
+.role{color:var(--muted);font-style:italic;margin-bottom:.7rem}
+.tl ul{margin:0;padding-left:1.1rem;max-width:44rem}
+.tl li li{margin:.3rem 0}
+.tl h3+.role+ul,.tl ul{color:var(--ink)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.3rem}
+.card h3{font-size:1.1rem;margin-bottom:.4rem}
+.card p{color:var(--muted);font-size:.97rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
+.chip{font-size:.85rem;font-weight:500;border:1px solid var(--line);border-radius:999px;padding:.2rem .7rem;background:var(--bg)}
+.sub{font:700 1.15rem var(--head);margin:2.4rem 0 1rem}
+.sub:first-child{margin-top:0}
+
+.cert{display:flex;gap:1.3rem;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:12px;padding:1.5rem}
+.badge{flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:14px;background:var(--accent);color:var(--accent-ink);font:800 1.1rem var(--head)}
+.cert h3{font-size:1.25rem}
+.cert p{color:var(--muted);margin:.4rem 0 .8rem;max-width:38rem}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.plain{list-style:none;margin:0;padding:0}
+.plain li{padding:.5rem 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem}
+.plain li span{color:var(--muted)}
+.dotl{margin:0;padding-left:1.1rem}.dotl li{margin:.4rem 0}
+
+.refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.contact-grid ul{list-style:none;margin:1.2rem 0 0;padding:0}
+.contact-grid li{margin:.7rem 0}
+.contact-grid li b{display:block;font-size:.9rem;color:var(--muted);font-weight:500}
+form{display:grid;gap:.9rem}
+label{font-weight:600;font-size:.95rem;display:grid;gap:.35rem}
+input,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.75rem .9rem;width:100%}
+textarea{min-height:130px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--accent)}
+.note{font-size:.9rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+
+@media (max-width:860px){
+  .hero .wrap,.sec,.two,.contact-grid{grid-template-columns:1fr}
+  .sec>h2{position:static}
+  #menu{display:inline-block}
+  nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem}
+  nav a{display:block;padding:.7rem 0}
+  .cert{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .code .l{animation:none;opacity:1}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#top"><i>SM</i>Shamsa Mahat</a>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#cert">Certification</a></li>
+        <li><a href="#more">More</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <button class="btn-i" id="theme" aria-label="Switch colour theme" title="Switch colour theme">◐</button>
+      <button class="btn-i" id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="hello">Hello, I’m</p>
+      <h1>Shamsa Mahat <span>Abdullahi</span></h1>
+      <p class="lead">Information Technology student and web developer from Garissa, Kenya. Microsoft Azure Fundamentals certified, and passionate about using technology to create opportunities.</p>
+      <div class="cta">
+        <a class="btn p" href="#contact">Get in touch</a>
+        <a class="btn s" href="#journey">See my journey</a>
+      </div>
+    </div>
+    <div class="code" aria-label="Quick profile">
+      <div class="dots" aria-hidden="true"><b></b><b></b><b></b></div>
+<pre><span class="l"><span class="k">const</span> shamsa = {</span><span class="l">  role: <span class="s">"Web developer"</span>,</span><span class="l">  studying: <span class="s">"BSc IT, Garissa University"</span>,</span><span class="l">  certified: <span class="s">"Azure AZ-900"</span>,</span><span class="l">  learning: [<span class="s">"Python"</span>, <span class="s">"Databases"</span>, <span class="s">"AI"</span>],</span><span class="l">  languages: [<span class="s">"English"</span>, <span class="s">"Kiswahili"</span>, <span class="s">"Somali"</span>]</span><span class="l">};</span></pre>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap sec">
+    <h2>About me</h2>
+    <div class="about">
+      <p>I’m a motivated, disciplined and fast-learning young Kenyan woman in technology. I’m currently pursuing a Bachelor’s degree in Information Technology at Garissa University.</p>
+      <p>Alongside my studies I have hands-on training in web development, databases, Python programming and Artificial Intelligence, plus foundational digital and online work skills from the AjiraForShe apprenticeship. I’m a dependable team player with strong problem-solving skills and a commitment to continuous learning.</p>
+      <div class="facts">
+        <div class="fact"><b>Garissa County</b><span>Based in Kenya</span></div>
+        <div class="fact"><b>BSc Information Technology</b><span>Year 1, Garissa University</span></div>
+        <div class="fact"><b>Azure AZ-900</b><span>Microsoft certified</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap sec">
+    <h2>Education & training</h2>
+    <ol class="tl">
+      <li class="now">
+        <span class="when">Sep 2026 – Present</span>
+        <h3>Garissa University</h3>
+        <p class="role">Bachelor of Science in Information Technology (Year 1)</p>
+        <ul>
+          <li>Studying core IT units covering computing fundamentals, programming and information systems.</li>
+          <li>Building a strong academic foundation to complement practical skills from external training.</li>
+        </ul>
+      </li>
+      <li class="now">
+        <span class="when">Aug 2026 – Present</span>
+        <h3>Power Learnt Project</h3>
+        <p class="role">Software Engineering Course (6-month programme)</p>
+        <ul>
+          <li>Learnt front-end and back-end web development, including building and structuring websites and web applications.</li>
+          <li>Gained skills in database design and management: storing, retrieving and organising data.</li>
+          <li>Studied Python programming, covering logic, problem-solving and writing clean, working code.</li>
+          <li>Introduced to AI concepts and how AI tools apply in real-world solutions.</li>
+          <li>Developed practical habits: teamwork, debugging, version control basics and project-based learning.</li>
+        </ul>
+      </li>
+      <li>
+        <span class="when">Jan 2026 – Mar 2026</span>
+        <h3>Northern Innovation and Empowerment Hub</h3>
+        <p class="role">AjiraForShe Apprenticeship Programme (3 months)</p>
+        <ul>
+          <li>Trained in foundational digital skills: using computers, the internet and online tools.</li>
+          <li>Learnt how to find, secure and perform work online, including freelancing and remote working basics.</li>
+          <li>Built communication, time management, digital etiquette and workplace readiness.</li>
+          <li>Joined hands-on sessions in a programme empowering young women through digital skills.</li>
+        </ul>
+      </li>
+      <li>
+        <span class="when">2021 – 2025</span>
+        <h3>Benane Secondary School</h3>
+        <p class="role">Kenya Certificate of Secondary Education (KCSE), Mean Grade B- (2025)</p>
+        <ul>
+          <li>Completed secondary education with a solid grounding in sciences, languages and humanities.</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap sec">
+    <h2>Skills</h2>
+    <div>
+      <h3 class="sub">Technical</h3>
+      <div class="skills">
+        <div class="card"><h3>Web development</h3><p>Website and web application development and page design.</p><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Web design</span></div></div>
+        <div class="card"><h3>Python</h3><p>Programming fundamentals, logic building and problem-solving.</p><div class="chips"><span class="chip">Python</span><span class="chip">Logic</span></div></div>
+        <div class="card"><h3>Databases</h3><p>Database concepts, data storage, organisation and management.</p><div class="chips"><span class="chip">Data storage</span><span class="chip">Data management</span></div></div>
+        <div class="card"><h3>Artificial intelligence</h3><p>Basic understanding of AI concepts and AI tools for productivity.</p><div class="chips"><span class="chip">AI concepts</span><span class="chip">AI tools</span></div></div>
+        <div class="card"><h3>Cloud computing</h3><p>Cloud concepts and core Microsoft Azure services.</p><div class="chips"><span class="chip">Azure</span><span class="chip">AZ-900</span></div></div>
+        <div class="card"><h3>Computer applications</h3><p>Everyday tools for research and online collaboration.</p><div class="chips"><span class="chip">Word</span><span class="chip">Excel</span><span class="chip">PowerPoint</span><span class="chip">Email</span></div></div>
+        <div class="card"><h3>Digital & online work</h3><p>Freelancing basics, remote work practices and online professionalism.</p><div class="chips"><span class="chip">Freelancing</span><span class="chip">Remote work</span></div></div>
+      </div>
+      <h3 class="sub">Soft skills</h3>
+      <div class="chips" style="margin-top:0">
+        <span class="chip">Clear communication</span><span class="chip">Teamwork</span><span class="chip">Analytical thinking</span><span class="chip">Creative problem-solving</span><span class="chip">Time management</span><span class="chip">Adaptability</span><span class="chip">Integrity</span><span class="chip">Strong work ethic</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cert">
+  <div class="wrap sec">
+    <h2>Certification</h2>
+    <div class="cert">
+      <div class="badge" aria-hidden="true">AZ</div>
+      <div>
+        <h3>Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
+        <p>Demonstrates foundational knowledge of cloud concepts, core Azure services, security, privacy, compliance, and Azure pricing and support.</p>
+        <a class="btn s" target="_blank" rel="noopener" href="https://learn.microsoft.com/en-gb/users/ShamsaMahat-7170/credentials/7FD7A7DE8A3594BB">Verify on Microsoft Learn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="more">
+  <div class="wrap sec">
+    <h2>More about me</h2>
+    <div>
+      <div class="two">
+        <div>
+          <h3 class="sub">Languages</h3>
+          <ul class="plain">
+            <li>English <span>Fluent, spoken and written</span></li>
+            <li>Kiswahili <span>Fluent, spoken and written</span></li>
+            <li>Somali <span>Fluent, spoken</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub">Interests</h3>
+          <ul class="dotl">
+            <li>Learning new technologies and exploring software development projects.</li>
+            <li>Reading, online research and self-paced digital learning.</li>
+            <li>Supporting and encouraging other young women to pursue careers in technology.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="sub">Referees</h3>
+      <div class="refs">
+        <div class="card"><h3>Omar Abdullahi</h3><p>Hub Manager<br>Northern Innovation and Empowerment Hub</p></div>
+        <div class="card"><h3>Salman Abdi Mohamed</h3><p>Senior Business Development Associate<br>Unstacked Labs</p></div>
+      </div>
+      <p class="note" style="margin-top:.8rem">Referee contact details are available on request.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap sec">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div>
+        <p>I’d love to hear from you about opportunities, collaborations or just to say hello.</p>
+        <ul>
+          <li><b>Email</b><a href="mailto:mahatshamsa7@gmail.com">mahatshamsa7@gmail.com</a></li>
+          <li><b>Phone</b><a href="tel:+254723806575">+254 723 806 575</a></li>
+          <li><b>Location</b>Garissa County, Kenya</li>
+        </ul>
+      </div>
+      <form id="form">
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Your email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <button class="btn p" type="submit" style="cursor:pointer;font:inherit;font-weight:600">Send message</button>
+        <p class="note" id="status" role="status">This opens your email app with the message ready to send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Shamsa Mahat Abdullahi</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+  var saved=store('theme');
+  if(saved==='light'||saved==='dark')root.setAttribute('data-theme',saved);
+
+  document.getElementById('theme').addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||
+      (!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);store('theme',next);
+  });
+
+  var nav=document.getElementById('nav'),menu=document.getElementById('menu');
+  menu.addEventListener('click',function(){
+    var o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o);
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}
+  });
+
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id)});
+        }
+      });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    document.querySelectorAll('section[id]').forEach(function(s){io.observe(s)});
+  }
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target,n=f.name.value.trim(),em=f.email.value.trim(),m=f.message.value.trim();
+    var body=m+'\n\n— '+n+' ('+em+')';
+    location.href='mailto:mahatshamsa7@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(body);
+    document.getElementById('status').textContent='Your email app should open now. If it doesn’t, write to mahatshamsa7@gmail.com.';
+  });
+})();
+</script>
+</body>
+</html>
